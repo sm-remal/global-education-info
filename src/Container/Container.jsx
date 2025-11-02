@@ -1,9 +1,9 @@
 import React from "react";
 
-const Container = ({ childer, className }) => {
+const Container = ({ children, className }) => {
   return (
     <section className={`${className} max-w-7xl mx-auto px-5`}>
-      {childer}
+      {children}
     </section>
   );
 };

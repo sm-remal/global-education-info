@@ -9,7 +9,7 @@ const MainLayout = () => {
             <header className='w-full mx-auto'>
                 <Navbar></Navbar>
             </header>
-            <main className='w-full mx-auto bg-base-300'>
+            <main className='w-full mx-auto bg-base-300 min-h-[calc(100vh-48px)]'>
                 <Outlet></Outlet>
             </main>
             <footer className='w-full mx-auto bg-black'>
