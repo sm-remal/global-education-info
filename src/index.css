@@ -2,5 +2,9 @@
 @plugin "daisyui";
 
 * {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.myBtn {
+  @apply px-4 md:px-6 py-1.5 md:py-2.5 rounded-md font-semibold text-xs md:text-base transition-colors duration-700 ease-in-out cursor-pointer;
 }
