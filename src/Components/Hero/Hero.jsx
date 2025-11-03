@@ -52,14 +52,14 @@ export default function Hero() {
         onTransitionEnd={handleTransitionEnd}
       >
         {extendedSlides.map((slide, index) => (
-  <div
-    key={index}
-    className="relative min-w-full bg-center bg-cover"
-    style={{ backgroundImage: `url(${slide.image})` }}
-  >
-    <div className="absolute inset-0 bg-black/50"></div>
-  </div>
-    ))}
+          <div
+            key={index}
+            className="w-full flex-shrink-0 relative bg-center bg-cover"
+            style={{ backgroundImage: `url(${slide.image})` }}
+          >
+            <div className="absolute inset-0 bg-black/50"></div>
+          </div>
+        ))}
       </div>
 
       {/* Text content */}
