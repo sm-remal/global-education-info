@@ -2,14 +2,9 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link, NavLink } from "react-router";
 import Container from "../../Container/Container";
 import navLogo from '../../assets/Images/navLogo.png'
-<<<<<<< HEAD
 import { AuthContext } from "../../Context/AuthContext";
 import toast from "react-hot-toast";
 
-=======
-import toast from "react-hot-toast";
-import { AuthContext } from "../../Context/AuthContext";
->>>>>>> c2263cafe6b0df9059539e05ca75c91158b0e704
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);

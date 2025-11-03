@@ -32,7 +32,7 @@ const programs = [
   },
 ];
 
-const PopularPrograme = () => {
+const PopularProgram = () => {
   return (
     <div className="py-16 bg-[#151269] my-10 rounded-2xl">
 
@@ -104,4 +104,4 @@ const PopularPrograme = () => {
   );
 };
 
-export default PopularPrograme;
+export default PopularProgram;
