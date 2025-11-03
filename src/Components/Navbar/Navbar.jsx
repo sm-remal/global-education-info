@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router";
 import Container from "../../Container/Container";
+import navLogo from '../../assets/Images/navLogo.png'
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -63,7 +64,10 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 text-xl font-bold text-white">
-            🌐 <span className="hidden sm:inline">Global Education Info</span>
+              <div className="flex items-center">
+                <img src={navLogo} alt="Logo" className="w-[50px]" />
+                <span className="hidden sm:inline">Global Education Info</span>
+              </div>
           </Link>
         </div>
 

@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "name": "Dhaka University",
+    "country": "Bangladesh",
+    "image_url": "https://example.com/images/du.jpg",
+    "rank": 584,
+    "tuition_per_year": "$2,000",
+    "scholarships": "Dhaka University Merit Scholarship",
+    "description": "Dhaka University is the oldest and largest public university in Bangladesh, offering a wide range of undergraduate, postgraduate, and research programs across arts, sciences, engineering, social sciences, and business. It provides a vibrant academic environment, experienced faculty, modern research facilities, and numerous cultural and extracurricular activities. Students benefit from scholarships, research opportunities, and international collaborations, preparing them for leadership roles nationally and globally."
+  },
+  {
+    "id": 2,
+    "name": "Harvard University",
+    "country": "USA",
+    "image_url": "https://example.com/images/harvard.jpg",
+    "rank": 2,
+    "tuition_per_year": "$50,000",
+    "scholarships": "Fulbright",
+    "description": "Harvard University is one of the most prestigious and well-known universities in the world. It offers a wide range of undergraduate, postgraduate, and doctoral programs across multiple disciplines including law, business, medicine, science, and arts. Students benefit from world-class faculty, advanced research opportunities, and a strong global alumni network, preparing them for leadership in their respective fields."
+  },
+  {
+    "id": 3,
+    "name": "Massachusetts Institute of Technology (MIT)",
+    "country": "USA",
+    "image_url": "https://example.com/images/mit.jpg",
+    "rank": 3,
+    "tuition_per_year": "$53,000",
+    "scholarships": "MIT Scholarships",
+    "description": "MIT is a world-leading institution for technology, science, and engineering education. It provides rigorous programs in fields such as computer science, mechanical engineering, physics, and economics. Students engage in hands-on research, entrepreneurship, and innovation initiatives. With access to cutting-edge labs, industry collaborations, and a vibrant academic community, MIT graduates are highly sought after globally for their expertise and problem-solving skills."
+  },
+  {
+    "id": 4,
+    "name": "Stanford University",
+    "country": "USA",
+    "image_url": "https://example.com/images/stanford.jpg",
+    "rank": 4,
+    "tuition_per_year": "$55,000",
+    "scholarships": "Knight-Hennessy Scholarship",
+    "description": "Stanford University is renowned for its excellence in research, entrepreneurship, and innovation. Located in the heart of Silicon Valley, it provides undergraduate, postgraduate, and doctoral programs in engineering, business, humanities, and social sciences. Students have access to world-class faculty, advanced laboratories, start-up incubators, and interdisciplinary collaboration opportunities. Stanford emphasizes critical thinking, leadership, and preparing students for global impact."
+  },
+  {
+    "id": 5,
+    "name": "University of Cambridge",
+    "country": "United Kingdom",
+    "image_url": "https://example.com/images/cambridge.jpg",
+    "rank": 5,
+    "tuition_per_year": "$40,000",
+    "scholarships": "Gates Cambridge",
+    "description": "The University of Cambridge is a historic and highly esteemed university in the United Kingdom. It offers a broad range of programs in natural sciences, engineering, humanities, and social sciences. Students are guided by world-class faculty and benefit from a collegiate system that encourages personal growth and academic excellence. Cambridge also provides research opportunities, scholarships, and international collaborations, shaping students into leaders and innovators."
+  },
+  {
+    "id": 6,
+    "name": "University of Oxford",
+    "country": "United Kingdom",
+    "image_url": "https://example.com/images/oxford.jpg",
+    "rank": 6,
+    "tuition_per_year": "$42,000",
+    "scholarships": "Rhodes Scholarship",
+    "description": "Oxford University is globally recognized for its rigorous academic programs, extensive research facilities, and historic college system. It offers undergraduate, postgraduate, and doctoral programs across humanities, sciences, law, and business. Students benefit from personalized tutorials, mentorship, and diverse extracurricular activities. Oxford also supports international students through scholarships, exchange programs, and research initiatives, providing a rich academic and cultural experience."
+  },
+  {
+    "id": 7,
+    "name": "California Institute of Technology (Caltech)",
+    "country": "USA",
+    "image_url": "https://example.com/images/caltech.jpg",
+    "rank": 7,
+    "tuition_per_year": "$54,000",
+    "scholarships": "Caltech Merit Scholarship",
+    "description": "Caltech is a leading institution in science, technology, and engineering education. It offers specialized programs in physics, computer science, chemistry, and engineering. Students have opportunities to work on cutting-edge research, collaborate with faculty experts, and participate in innovation initiatives. Caltech emphasizes academic excellence, critical thinking, and problem-solving skills. Its small student-to-faculty ratio ensures personalized guidance and mentorship for high-impact career development."
+  },
+  {
+    "id": 8,
+    "name": "ETH Zurich",
+    "country": "Switzerland",
+    "image_url": "https://example.com/images/eth.jpg",
+    "rank": 8,
+    "tuition_per_year": "$30,000",
+    "scholarships": "Excellence Scholarship",
+    "description": "ETH Zurich is one of Europe's top universities specializing in science, engineering, and technology programs. It offers high-quality education in computer science, mechanical engineering, and natural sciences. Students have access to world-class research labs, collaborative projects, and industry partnerships. ETH Zurich emphasizes innovation, critical thinking, and preparing graduates for leadership in technology and research. The university attracts a diverse international student body and provides scholarship opportunities."
+  },
+  {
+    "id": 9,
+    "name": "University of Chicago",
+    "country": "USA",
+    "image_url": "https://example.com/images/uchicago.jpg",
+    "rank": 9,
+    "tuition_per_year": "$57,000",
+    "scholarships": "University Scholarship",
+    "description": "The University of Chicago is known for its strong emphasis on research, critical thinking, and interdisciplinary learning. It offers programs in economics, law, social sciences, and physical sciences. Students are engaged in rigorous academics, research projects, and intellectual discourse. The university supports international students with scholarships, career guidance, and professional development. Its urban campus in Chicago provides access to industry connections and cultural experiences."
+  },
+  {
+    "id": 10,
+    "name": "Imperial College London",
+    "country": "United Kingdom",
+    "image_url": "https://example.com/images/imperial.jpg",
+    "rank": 10,
+    "tuition_per_year": "$45,000",
+    "scholarships": "Imperial Scholarship",
+    "description": "Imperial College London is a globally recognized institution specializing in science, engineering, medicine, and business. It provides advanced education, research opportunities, and industry collaboration. Students gain practical experience through labs, internships, and innovation programs. Imperial College emphasizes academic rigor, entrepreneurship, and global impact. The campus fosters an international student community and offers scholarships to support diverse talent."
+  },
+  {
+    "id": 11,
+    "name": "University College London (UCL)",
+    "country": "United Kingdom",
+    "image_url": "https://example.com/images/ucl.jpg",
+    "rank": 11,
+    "tuition_per_year": "$38,000",
+    "scholarships": "UCL Global Scholarship",
+    "description": "UCL is one of the leading comprehensive research universities in the United Kingdom. It offers programs across arts, sciences, engineering, and social sciences. Students benefit from world-class faculty, research opportunities, and a vibrant international community. UCL encourages innovation, critical thinking, and interdisciplinary learning. The university provides scholarships, exchange programs, and career development services for students worldwide."
+  },
+  {
+    "id": 12,
+    "name": "Princeton University",
+    "country": "USA",
+    "image_url": "https://example.com/images/princeton.jpg",
+    "rank": 12,
+    "tuition_per_year": "$51,000",
+    "scholarships": "Princeton Fellowship",
+    "description": "Princeton University emphasizes research excellence, undergraduate teaching, and liberal arts education. It offers programs in engineering, humanities, social sciences, and natural sciences. Students gain access to leading faculty, research projects, and global collaborations. The campus fosters intellectual curiosity, innovation, and leadership skills. Scholarships and financial aid are available for meritorious international students, ensuring equal opportunity to pursue high-quality education."
+  },
+  {
+    "id": 13,
+    "name": "Yale University",
+    "country": "USA",
+    "image_url": "https://example.com/images/yale.jpg",
+    "rank": 13,
+    "tuition_per_year": "$52,000",
+    "scholarships": "Yale Scholarship",
+    "description": "Yale University offers rigorous academic programs across law, medicine, arts, sciences, and social sciences. Students benefit from world-class faculty, state-of-the-art research facilities, and vibrant extracurricular opportunities. Yale emphasizes leadership development, critical thinking, and interdisciplinary learning. International students receive scholarship support, mentorship, and guidance for global career opportunities. The university fosters a collaborative and inclusive academic community."
+  },
+  {
+    "id": 14,
+    "name": "Columbia University",
+    "country": "USA",
+    "image_url": "https://example.com/images/columbia.jpg",
+    "rank": 14,
+    "tuition_per_year": "$54,000",
+    "scholarships": "Columbia Grant",
+    "description": "Columbia University, located in New York City, is an Ivy League institution with strong programs in business, law, medicine, engineering, and arts. It provides access to research, internships, and industry collaborations. Students benefit from personalized guidance, international networking, and cultural exposure. Columbia supports global students with scholarships, mentorship, and career development opportunities, fostering academic excellence and professional growth."
+  },
+  {
+    "id": 15,
+    "name": "University of Pennsylvania",
+    "country": "USA",
+    "image_url": "https://example.com/images/upenn.jpg",
+    "rank": 15,
+    "tuition_per_year": "$53,000",
+    "scholarships": "Penn Scholarship",
+    "description": "The University of Pennsylvania is an Ivy League university offering programs in business, law, medicine, social sciences, and arts. Students engage in rigorous academics, research initiatives, and global projects. Penn emphasizes interdisciplinary learning, leadership development, and practical experience. The university provides scholarships and mentorship programs for international students, fostering innovation, critical thinking, and career readiness in diverse fields."
+  },
+  {
+    "id": 16,
+    "name": "Cornell University",
+    "country": "USA",
+    "image_url": "https://example.com/images/cornell.jpg",
+    "rank": 16,
+    "tuition_per_year": "$52,000",
+    "scholarships": "Cornell Grant",
+    "description": "Cornell University offers undergraduate, graduate, and doctoral programs in engineering, agriculture, business, arts, and sciences. The university emphasizes research, innovation, and experiential learning. Students have access to advanced laboratories, global collaborations, and diverse extracurricular activities. Scholarships and financial aid are available to international students. Cornell fosters a supportive academic environment preparing students for leadership, innovation, and global engagement."
+  },
+  {
+    "id": 17,
+    "name": "University of Toronto",
+    "country": "Canada",
+    "image_url": "https://example.com/images/utoronto.jpg",
+    "rank": 17,
+    "tuition_per_year": "$45,000",
+    "scholarships": "U of T International Scholarship",
+    "description": "The University of Toronto is Canada's leading research university, offering programs in medicine, engineering, business, arts, and sciences. Students benefit from world-class faculty, advanced research facilities, and global collaborations. The university provides opportunities for internships, entrepreneurship, and community engagement. International students receive scholarships, mentorship, and guidance for academic success. Toronto fosters innovation, critical thinking, and prepares graduates for international careers."
+  },
+  {
+    "id": 18,
+    "name": "McGill University",
+    "country": "Canada",
+    "image_url": "https://example.com/images/mcgill.jpg",
+    "rank": 18,
+    "tuition_per_year": "$40,000",
+    "scholarships": "McGill Entrance Scholarship",
+    "description": "McGill University in Montreal offers a broad range of undergraduate, postgraduate, and research programs in medicine, law, engineering, arts, and sciences. Students benefit from experienced faculty, research labs, and vibrant cultural and extracurricular activities. McGill encourages global collaboration, critical thinking, and leadership development. Scholarships and support programs are available for international students, preparing them for high-impact careers worldwide."
+  },
+  {
+    "id": 19,
+    "name": "University of Melbourne",
+    "country": "Australia",
+    "image_url": "https://example.com/images/melbourne.jpg",
+    "rank": 19,
+    "tuition_per_year": "$42,000",
+    "scholarships": "Melbourne International Scholarship",
+    "description": "The University of Melbourne offers world-class education in arts, sciences, engineering, business, and medicine. It provides research opportunities, global collaborations, and industry partnerships. Students benefit from a multicultural campus, advanced facilities, and mentorship programs. Scholarships and financial aid are available for international students. Melbourne emphasizes critical thinking, leadership, and practical experience, preparing graduates for professional success internationally."
+  },
+  {
+    "id": 20,
+    "name": "Australian National University",
+    "country": "Australia",
+    "image_url": "https://example.com/images/anu.jpg",
+    "rank": 20,
+    "tuition_per_year": "$40,000",
+    "scholarships": "ANU Global Scholarship",
+    "description": "Australian National University (ANU) is a leading research institution offering programs in sciences, engineering, social sciences, and humanities. Students engage in interdisciplinary projects, research initiatives, and international collaborations. ANU provides scholarships, mentorship, and academic support for global students. The university emphasizes innovation, critical thinking, and leadership development, preparing graduates to make significant contributions in their fields."
+  },
+  {
+    "id": 21,
+    "name": "National University of Singapore (NUS)",
+    "country": "Singapore",
+    "image_url": "https://example.com/images/nus.jpg",
+    "rank": 21,
+    "tuition_per_year": "$38,000",
+    "scholarships": "NUS Global Merit Scholarship",
+    "description": "NUS is Singapore’s top-ranked university, offering undergraduate, postgraduate, and doctoral programs in engineering, sciences, business, and humanities. Students have access to research labs, global partnerships, and entrepreneurship programs. Scholarships and mentorship programs support international students. NUS emphasizes innovation, leadership, and problem-solving skills. Its campus fosters a multicultural academic environment, preparing graduates for international careers."
+  },
+  {
+    "id": 22,
+    "name": "Tsinghua University",
+    "country": "China",
+    "image_url": "https://example.com/images/tsinghua.jpg",
+    "rank": 22,
+    "tuition_per_year": "$30,000",
+    "scholarships": "Tsinghua Scholarship",
+    "description": "Tsinghua University is China’s leading institution for engineering, technology, and science education. It provides rigorous academic programs, world-class research facilities, and opportunities for international collaboration. Students engage in hands-on projects, innovation initiatives, and leadership programs. Scholarships are available for top-performing international students. Tsinghua emphasizes critical thinking, problem-solving, and preparing students for leadership roles in technology and research globally."
+  },
+  {
+    "id": 23,
+    "name": "Peking University",
+    "country": "China",
+    "image_url": "https://example.com/images/peking.jpg",
+    "rank": 23,
+    "tuition_per_year": "$28,000",
+    "scholarships": "Peking Global Scholarship",
+    "description": "Peking University is a premier research university in China offering programs in sciences, humanities, engineering, and social sciences. Students benefit from expert faculty, modern research facilities, and diverse cultural activities. The university supports international students with scholarships, mentorship, and career guidance. Peking University emphasizes interdisciplinary learning, innovation, and global engagement, preparing graduates to excel in competitive international environments."
+  },
+  {
+    "id": 24,
+    "name": "University of Tokyo",
+    "country": "Japan",
+    "image_url": "https://example.com/images/tokyo.jpg",
+    "rank": 24,
+    "tuition_per_year": "$25,000",
+    "scholarships": "UTokyo Scholarship",
+    "description": "The University of Tokyo offers world-class programs in engineering, science, law, medicine, and social sciences. Students have access to research labs, global collaborations, and cultural exchange programs. The university emphasizes academic excellence, critical thinking, and innovation. Scholarships and mentorship programs support international students. The University of Tokyo prepares graduates for leadership roles in academia, industry, and government worldwide."
+  },
+  {
+    "id": 25,
+    "name": "Seoul National University",
+    "country": "South Korea",
+    "image_url": "https://example.com/images/snu.jpg",
+    "rank": 25,
+    "tuition_per_year": "$24,000",
+    "scholarships": "SNU Global Scholarship",
+    "description": "Seoul National University is South Korea’s leading institution, offering programs in engineering, business, humanities, sciences, and arts. Students benefit from advanced research facilities, international collaborations, and scholarship opportunities. The university fosters innovation, leadership, and critical thinking. International students receive mentorship, career guidance, and support to excel academically. SNU encourages cultural exchange and prepares graduates for global careers."
+  },
+  {
+    "id": 26,
+    "name": "University of Hong Kong",
+    "country": "Hong Kong",
+    "image_url": "https://example.com/images/hku.jpg",
+    "rank": 26,
+    "tuition_per_year": "$22,000",
+    "scholarships": "HKU International Scholarship",
+    "description": "The University of Hong Kong offers a wide range of programs in medicine, business, law, sciences, and humanities. Students engage in research projects, global partnerships, and cultural activities. Scholarships and mentorship programs are available for international students. HKU emphasizes critical thinking, innovation, and academic excellence. Graduates are prepared for leadership roles in global organizations and international careers."
+  },
+  {
+    "id": 27,
+    "name": "University of Sydney",
+    "country": "Australia",
+    "image_url": "https://example.com/images/sydney.jpg",
+    "rank": 27,
+    "tuition_per_year": "$40,000",
+    "scholarships": "Sydney International Scholarship",
+    "description": "The University of Sydney provides high-quality programs in arts, sciences, business, law, and engineering. Students benefit from modern facilities, research opportunities, and global collaborations. The university offers scholarships and mentorship to international students. Sydney emphasizes innovation, leadership, and practical experience. Graduates are equipped with knowledge and skills for professional success and global career opportunities."
+  },
+  {
+    "id": 28,
+    "name": "University of British Columbia",
+    "country": "Canada",
+    "image_url": "https://example.com/images/ubc.jpg",
+    "rank": 28,
+    "tuition_per_year": "$42,000",
+    "scholarships": "UBC International Award",
+    "description": "The University of British Columbia offers undergraduate and postgraduate programs in sciences, engineering, arts, and business. Students have access to research facilities, internships, and international collaborations. Scholarships support meritorious international students. UBC encourages critical thinking, innovation, and leadership development. The university prepares graduates to make meaningful contributions in their professional and academic careers globally."
+  },
+  {
+    "id": 29,
+    "name": "King’s College London",
+    "country": "United Kingdom",
+    "image_url": "https://example.com/images/kcl.jpg",
+    "rank": 29,
+    "tuition_per_year": "$38,000",
+    "scholarships": "KCL Global Scholarship",
+    "description": "King’s College London provides world-class programs in medicine, law, social sciences, and humanities. Students benefit from research opportunities, international partnerships, and cultural activities. Scholarships are available for international students. KCL emphasizes academic excellence, critical thinking, and leadership development. Graduates are equipped to succeed in global careers and contribute to society through knowledge and innovation."
+  },
+  {
+    "id": 30,
+    "name": "Tokyo Institute of Technology",
+    "country": "Japan",
+    "image_url": "https://example.com/images/titech.jpg",
+    "rank": 30,
+    "tuition_per_year": "$26,000",
+    "scholarships": "Tokyo Tech Scholarship",
+    "description": "Tokyo Institute of Technology is a premier university in Japan, specializing in science, engineering, and technology. Students have access to cutting-edge research, labs, and industry collaborations. Tokyo Tech emphasizes academic excellence, innovation, and critical thinking. International students receive scholarships, mentorship, and support to excel. The university prepares graduates for high-impact careers in technology, research, and innovation globally."
+  }
+]
