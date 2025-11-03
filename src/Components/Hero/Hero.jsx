@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 
-// ✅ Import images
 import bg from "../../assets/Images/bg.jpg";
 import hero1 from "../../assets/Images/hero1.jpg";
 import hero2 from "../../assets/Images/hero2.jpg";
@@ -33,14 +32,14 @@ export default function Hero() {
   // Handle infinite loop
   const handleTransitionEnd = () => {
     if (current === totalSlides) {
-      // Reset to first slide instantly (no transition)
+      
       setTransition(false);
       setCurrent(0);
     }
   };
 
-  // Prepare slides including clone of first slide
-  const extendedSlides = [...slides, slides[0]]; // ✅ clone first slide at end
+  
+  const extendedSlides = [...slides, slides[0]]; 
 
   return (
     <div className="relative w-full h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
@@ -54,7 +53,7 @@ export default function Hero() {
         {extendedSlides.map((slide, index) => (
           <div
             key={index}
-            className="w-full flex-shrink-0 relative bg-center bg-cover"
+            className="w-full shrink-0 relative bg-center bg-cover"
             style={{ backgroundImage: `url(${slide.image})` }}
           >
             <div className="absolute inset-0 bg-black/50"></div>

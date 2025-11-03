@@ -7,6 +7,7 @@ import { FaRegFaceRollingEyes } from "react-icons/fa6";
 import { AuthContext } from "../../Context/AuthContext";
 import Container from "../../Container/Container";
 import logo from "../../assets/Images/website-logo.png";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const { createUser, logInGoogle, updateUserInfo, setUser } =
@@ -25,22 +26,21 @@ const Register = () => {
     const hasValidLength = password.length >= 6;
 
     if (!hasUppercase) {
-      alert("Please Enter At Least One Uppercase!");
+      toast.error("Please Enter At Least One Uppercase!");
       return;
     }
     if (!hasLowercase) {
-      alert("Please Enter At Least One Lowercase!");
+      toast.error("Please Enter At Least One Lowercase!");
       return;
     }
     if (!hasValidLength) {
-      alert("Please Enter Minimum 6 Length Password!");
+      toast.error("Please Enter Minimum 6 Length Password!");
       return;
     }
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
 
         // ! Update User
         const userUpdateInfo = {
@@ -52,18 +52,19 @@ const Register = () => {
           .then(() => {
             setUser({ ...user, userUpdateInfo });
           })
-          .catch((err) => console.log(err.message));
+          .catch((err) => toast.error(err.message));
+        toast.success("Your Account successfully Created.");
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => toast.error(err.message));
   };
 
   const handleGoogleLogIn = () => {
     logInGoogle()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
+      .then(() => {
+        toast.success("Your Sign in successful.");
+        // console.log(user);
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => toast.error(err.message));
   };
 
   return (
@@ -71,7 +72,7 @@ const Register = () => {
       <title>Register || Global-Education-info</title>
       <form
         onSubmit={hendleCreateUser}
-        className="shadow-lg bg-base-200 rounded-box w-full md:w-3/6 lg:w-2/5 border p-7 border-teal-500"
+        className="shadow-lg bg-base-200 py-10 mt-15 rounded-box w-full md:w-3/6 lg:w-2/5 border p-7 border-teal-500"
       >
         <div className="flex items-center justify-center">
           <img className="w-40 py-5" src={logo} alt="This is logo" />
@@ -130,6 +131,7 @@ const Register = () => {
               <input
                 type="url"
                 name="photoURL"
+                required
                 placeholder="Enter URL"
                 className="input border border-[#632EE3] w-full focus:border-teal-500 focus:outline-0 cursor-pointer"
               />
@@ -148,7 +150,7 @@ const Register = () => {
                   type={showEye ? "password" : "text"}
                   name="password"
                   placeholder="Enter Password"
-                  className=""
+                  required
                 />
                 <p
                   onClick={() => {

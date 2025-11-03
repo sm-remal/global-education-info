@@ -2,6 +2,7 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { useLocation } from "react-router";
 import { useEffect, useState } from "react";
 import { auth } from "../../Firebase/Firebase.config";
+import toast from "react-hot-toast";
 
 const ForgotPassword = () => {
 
@@ -23,16 +24,16 @@ const ForgotPassword = () => {
       
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        alert(
-          "Your Password Reset Successful. Please Check your email inbox or Spam"
+        toast.success(
+          "Your Password Reset Successful. Please Check your email inbox or Spam."
         );
         setTimeout(() => {
           window.location.href = "https://mail.google.com/";
         }, 1500);
-        // e.target.reset();
+        
       })
       .catch((err) => {
-        alert(err.message);
+        toast.error(err.message);
       });
   };
   return (

@@ -1,6 +1,5 @@
-
-import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import { Link, NavLink } from "react-router";
 import Container from "../../Container/Container";
 import navLogo from '../../assets/Images/navLogo.png'
 
@@ -10,7 +9,9 @@ const Navbar = () => {
   const dropdownRef = useRef(null);
   const searchRef = useRef(null);
 
-  // --- Click outside to close dropdown/search ---
+  const { user, userSignOut, setUser } = useContext(AuthContext);
+
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -24,9 +25,20 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // --- Toggle dropdown ---
+
   const toggleDropdown = (menu) => {
     setActiveDropdown((prev) => (prev === menu ? null : menu));
+  };
+
+  const handleSignOut = () => {
+    userSignOut()
+      .then(() => {
+        setUser(null);
+        toast.success("Your SignOut successful.");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
   };
 
   return (
@@ -36,23 +48,52 @@ const Navbar = () => {
         <div className="navbar-start">
           {/* Mobile Hamburger */}
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost text-white lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost text-white lg:hidden"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </div>
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[100] p-2 shadow bg-white text-black rounded-box w-64"
             >
-              {["Explore", "Opportunities", "Living & Support", "Test & Skills", "Apply"].map((menu) => (
+              {[
+                "Home",
+                "Opportunities",
+                "Living & Support",
+                "Test & Skills",
+                "Apply",
+              ].map((menu) => (
                 <li key={menu}>
                   <details>
                     <summary>{menu}</summary>
                     <ul className="p-2">
                       {getDropdownItems(menu).map((item) => (
                         <li key={item}>
-                          <Link>{item}</Link>
+                          <NavLink
+                            className={({ isActive }) =>
+                              isActive
+                                ? "border-b-2 pb-1 text-[#258184] border-b-[#258184]"
+                                : ""
+                            }
+                          >
+                            {item}
+                          </NavLink>
                         </li>
                       ))}
                     </ul>
@@ -64,7 +105,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 text-xl font-bold text-white">
-              <div className="flex items-center">
+            <div className="flex items-center">
                 <img src={navLogo} alt="Logo" className="w-[50px]" />
                 <span className="hidden sm:inline">Global Education Info</span>
               </div>
@@ -74,20 +115,31 @@ const Navbar = () => {
         {/* CENTER: Main Menu */}
         <div className="navbar-center hidden lg:flex" ref={dropdownRef}>
           <ul className="menu menu-horizontal px-1 font-medium text-white">
-            {["Explore", "Opportunities", "Living & Support", "Test & Skills", "Apply"].map((menu) => (
+            {[
+              "Home",
+              "Opportunities",
+              "Living & Support",
+              "Test & Skills",
+              "Apply",
+            ].map((menu) => (
               <li key={menu} className="relative group">
                 <button
                   onClick={() => toggleDropdown(menu)}
                   className={`px-3 py-2 transition-all duration-200 rounded-md 
-                    ${activeDropdown === menu
-                      ? "bg-white text-[#151269] font-semibold"
-                      : "hover:text-blue-300"
+                    ${
+                      activeDropdown === menu
+                        ? "bg-white text-[#151269] font-semibold"
+                        : "hover:text-blue-300"
                     }`}
                 >
                   {menu}
                   <div
-                    className={`h-[2px] transition-transform origin-left duration-200 
-                      ${activeDropdown === menu ? "bg-white scale-x-100" : "bg-blue-400 scale-x-0 group-hover:scale-x-100"}`}
+                    className={`h-0.5 transition-transform origin-left duration-200 
+                      ${
+                        activeDropdown === menu
+                          ? "bg-white scale-x-100"
+                          : "bg-blue-400 scale-x-0 group-hover:scale-x-100"
+                      }`}
                   ></div>
                 </button>
 
@@ -96,11 +148,9 @@ const Navbar = () => {
                   <ul className="absolute -left-4 top-full mt-4 bg-white text-black shadow-lg rounded-box w-56 p-2 z-50 animate-fadeIn">
                     {getDropdownItems(menu).map((item) => (
                       <li key={item}>
-                        <Link
-                          className="block px-2 py-1 rounded-md transition-all duration-200 hover:bg-[#151269] hover:text-white"
-                        >
+                        <NavLink className="block px-2 py-1 rounded-md transition-all duration-200 hover:bg-[#151269] hover:text-white">
                           {item}
-                        </Link>
+                        </NavLink>
                       </li>
                     ))}
                   </ul>
@@ -117,24 +167,58 @@ const Navbar = () => {
             onClick={() => setShowSearch((prev) => !prev)}
             className="btn btn-ghost btn-circle text-white hover:bg-[#1b1780]"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-4.35-4.35M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 21l-4.35-4.35M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
+              />
             </svg>
           </button>
 
           {/* Auth Buttons */}
-          <Link
-            to="/signin"
-            className="btn btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
-          >
-            Sign In
-          </Link>
-          <Link
-            to="/signup"
-            className="btn btn-sm bg-white text-[#151269] hover:bg-blue-100 font-semibold"
-          >
-            Sign Up
-          </Link>
+          <div>
+            {user ? (
+              <div className="text-white w-10 h-10 flex items-center justify-center border-2 rounded-full cursor-pointer relative">
+                <img
+                  className="w-9 h-9 rounded-full"
+                  src={user.photoURL}
+                  alt="User Image"
+                />
+              </div>
+            ) : (
+              <Link
+                to="/register"
+                className="btn btn-sm bg-white text-[#151269] hover:bg-blue-100 font-semibold"
+              >
+                Sign Up
+              </Link>
+            )}
+          </div>
+          <div>
+            {user ? (
+              <Link
+                onClick={handleSignOut}
+                className="btn btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
+              >
+                Sign Out
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                className="btn btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
+              >
+                Sign In
+              </Link>
+            )}
+          </div>
         </div>
       </Container>
 
@@ -164,19 +248,40 @@ const Navbar = () => {
 const getDropdownItems = (menu) => {
   let items = [];
   if (menu === "Explore") {
-    items = ["Universities", "Countries", "Programs", "Rankings", "Admission Deadlines"];
+    items = [
+      "Universities",
+      "Countries",
+      "Programs",
+      "Rankings",
+      "Admission Deadlines",
+    ];
   } else if (menu === "Opportunities") {
-    items = ["Scholarships", "Grants & Fellowships", "Research Programs", "Exchange Programs"];
+    items = [
+      "Scholarships",
+      "Grants & Fellowships",
+      "Research Programs",
+      "Exchange Programs",
+    ];
   } else if (menu === "Living & Support") {
-    items = ["Accommodation", "Cost of Living", "Visa & Embassy Info", "Travel Guide", "Student Insurance"];
+    items = [
+      "Accommodation",
+      "Cost of Living",
+      "Visa & Embassy Info",
+      "Travel Guide",
+      "Student Insurance",
+    ];
   } else if (menu === "Test & Skills") {
     items = ["IELTS", "PTE", "TOEFL", "GRE / GMAT", "Skill Development"];
   } else if (menu === "Apply") {
-    items = ["Apply Now", "Track Application", "Reference Agencies", "Required Documents", "FAQ"];
+    items = [
+      "Apply Now",
+      "Track Application",
+      "Reference Agencies",
+      "Required Documents",
+      "FAQ",
+    ];
   }
   return items;
 };
 
 export default Navbar;
-
-

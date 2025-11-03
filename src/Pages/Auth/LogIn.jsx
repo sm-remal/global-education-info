@@ -6,6 +6,7 @@ import { FaRegFaceRollingEyes } from "react-icons/fa6";
 import Container from "../../Container/Container";
 import { AuthContext } from "../../Context/AuthContext";
 import logo from "../../assets/Images/website-logo.png"
+import toast from "react-hot-toast";
 
 const LogIn = () => {
   const { logInGoogle, setLoading, userLogIn } = useContext(AuthContext);
@@ -17,14 +18,14 @@ const LogIn = () => {
 
  const handleGoogleLogIn = () => {
    logInGoogle()
-     .then((result) => {
-       const user = result.user;
-       console.log(user);
+     .then(() => {
+       toast.success("Your LogIn Successful.")
+       
        navigate(location.state || "/")
        
        
      })
-     .catch((err) => console.log(err.message));
+     .catch((err) => toast.error(err.message));
   };
   
 
@@ -35,12 +36,12 @@ const LogIn = () => {
 
      userLogIn(email, password)
        .then(() => {
-         alert("Your LogIn Successful.");
+          toast.success("Your LogIn Successful.");
          navigate(location.state || "/");
        })
        .catch((err) => {
          setLoading(false);
-         alert(`${err.message}`);
+        toast.error(`${err.message}`);
          return;
        });
    };
@@ -50,7 +51,7 @@ const LogIn = () => {
       <title>LogIn || Global-Education-info</title>
       <form
         onSubmit={handleLogIn}
-        className="bg-base-200 shadow-lg rounded-box md:w-3/6 lg:w-2/6 border p-7 border-teal-500"
+        className="bg-base-200 shadow-lg py-10 mt-15 rounded-box md:w-3/6 lg:w-2/6 border p-7 border-teal-500"
       >
         <div className="flex items-center justify-center">
           <img className="w-40 py-5" src={logo} alt="This is logo" />
@@ -79,6 +80,7 @@ const LogIn = () => {
                 type="email"
                 name="email"
                 value={email}
+                required
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="globaleducationinfo@gmail.com"
                 className="input w-full focus:border-teal-500 border border-[#632EE3] focus:outline-0 cursor-pointer"
@@ -97,6 +99,7 @@ const LogIn = () => {
                 <input
                   type={showEye ? "password" : "text"}
                   name="password"
+                  required
                   placeholder="Enter Password"
                 />
                 <p
