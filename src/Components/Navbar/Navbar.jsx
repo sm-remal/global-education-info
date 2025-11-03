@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router";
 import Container from "../../Container/Container";
@@ -155,7 +156,7 @@ const Navbar = () => {
   );
 };
 
-// --- Dropdown Items ---
+// --- Dropdown Items (if–else) ---
 const getDropdownItems = (menu) => {
   let items = [];
   if (menu === "Explore") {
