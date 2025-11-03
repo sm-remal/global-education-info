@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link, NavLink } from "react-router";
 import Container from "../../Container/Container";
-import { AuthContext } from "../../Context/AuthContext";
+import navLogo from '../../assets/Images/navLogo.png'
 import toast from "react-hot-toast";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -105,11 +106,11 @@ const Navbar = () => {
           </div>
 
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-xl font-bold text-white"
-          >
-            🌐 <span className="hidden sm:inline">Global Education Info</span>
+          <Link to="/" className="flex items-center gap-2 text-xl font-bold text-white">
+            <div className="flex items-center">
+                <img src={navLogo} alt="Logo" className="w-[50px]" />
+                <span className="hidden sm:inline">Global Education Info</span>
+              </div>
           </Link>
         </div>
 
