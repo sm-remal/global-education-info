@@ -89,11 +89,8 @@ const Navbar = () => {
             <FaRegUser />
           </div>
           {/* Cart */}
-          <div className="text-white w-10 h-10 flex items-center justify-center border-2 rounded-full cursor-pointer relative">
-            <BsCartPlus />
-            <p className="absolute bg-white -top-2 right-0 h-5 w-5 text-[12px] rounded-full flex justify-center items-center text-red-600 p-1 font-bold">
-              10
-            </p>
+                  <div className="btn btn-primary">
+                      <Link to={"/login"}>LogIn</Link>
           </div>
 
           {/* search bar */}
@@ -107,7 +104,7 @@ const Navbar = () => {
             <div
               className={`${
                 serchToggol
-                  ? "border-2 flex justify-between p-2 rounded-md items-center bg-base-300 mx-5"
+                  ? "border-2 flex justify-between p-2 rounded-md items-center bg-base-300"
                   : ""
               }`}
             >
