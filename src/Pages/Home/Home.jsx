@@ -2,15 +2,17 @@ import React from "react";
 
 import Container from "../../Container/Container";
 import Hero from "../../Components/Hero/Hero";
-import HowItWork from "../../Components/HomeComponants/HowItWork";
+import PopularPrograme from "../../Components/PopularPrograme/PopularPrograme";
 
 
 const Home = () => {
   return (
     <div className="">
-      <Hero></Hero>
-      <HowItWork></HowItWork>
-      
+       <Hero></Hero>
+      <Container>
+       <PopularPrograme></PopularPrograme>
+       
+      </Container>
     </div>
   );
 };
