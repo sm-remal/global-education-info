@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link, NavLink } from "react-router";
 import Container from "../../Container/Container";
 import navLogo from '../../assets/Images/navLogo.png'
+import { AuthContext } from "../../Context/AuthContext";
+import toast from "react-hot-toast";
+
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -247,7 +250,7 @@ const Navbar = () => {
 // --- Dropdown Items (if–else) ---
 const getDropdownItems = (menu) => {
   let items = [];
-  if (menu === "Explore") {
+  if (menu === "Home") {
     items = [
       "Universities",
       "Countries",
