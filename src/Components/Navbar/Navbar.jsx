@@ -71,7 +71,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[100] p-2 shadow bg-white text-black rounded-box w-64"
+              className="menu menu-sm dropdown-content mt-3 z-100 p-2 shadow bg-white text-black rounded-box w-64"
             >
               {[
                 "Home",
@@ -197,7 +197,7 @@ const Navbar = () => {
             ) : (
               <Link
                 to="/register"
-                className="btn btn-sm bg-white text-[#151269] hover:bg-blue-100 font-semibold"
+                className="btn btn-xs md:btn-sm bg-white text-[#151269] hover:bg-blue-100 font-semibold"
               >
                 Sign Up
               </Link>
@@ -207,14 +207,14 @@ const Navbar = () => {
             {user ? (
               <Link
                 onClick={handleSignOut}
-                className="btn btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
+                className="btn btn-xs md:btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
               >
                 Sign Out
               </Link>
             ) : (
               <Link
                 to="/login"
-                className="btn btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
+                className="btn btn-xs md:btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
               >
                 Sign In
               </Link>
