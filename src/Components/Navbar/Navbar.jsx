@@ -2,9 +2,14 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link, NavLink } from "react-router";
 import Container from "../../Container/Container";
 import navLogo from '../../assets/Images/navLogo.png'
+<<<<<<< HEAD
 import { AuthContext } from "../../Context/AuthContext";
 import toast from "react-hot-toast";
 
+=======
+import toast from "react-hot-toast";
+import { AuthContext } from "../../Context/AuthContext";
+>>>>>>> c2263cafe6b0df9059539e05ca75c91158b0e704
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -73,7 +78,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[100] p-2 shadow bg-white text-black rounded-box w-64"
+              className="menu menu-sm dropdown-content mt-3 z-100 p-2 shadow bg-white text-black rounded-box w-64"
             >
               {[
                 "Home",
@@ -199,7 +204,7 @@ const Navbar = () => {
             ) : (
               <Link
                 to="/register"
-                className="btn btn-sm bg-white text-[#151269] hover:bg-blue-100 font-semibold"
+                className="btn btn-xs md:btn-sm bg-white text-[#151269] hover:bg-blue-100 font-semibold"
               >
                 Sign Up
               </Link>
@@ -209,14 +214,14 @@ const Navbar = () => {
             {user ? (
               <Link
                 onClick={handleSignOut}
-                className="btn btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
+                className="btn btn-xs md:btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
               >
                 Sign Out
               </Link>
             ) : (
               <Link
                 to="/login"
-                className="btn btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
+                className="btn btn-xs md:btn-sm btn-outline border-white text-white hover:bg-white hover:text-[#151269]"
               >
                 Sign In
               </Link>

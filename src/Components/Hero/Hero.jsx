@@ -1,45 +1,66 @@
 import { useState, useEffect, useRef } from "react";
 
-import bg from "../../assets/Images/bg.jpg";
-import hero1 from "../../assets/Images/hero1.jpg";
-import hero2 from "../../assets/Images/hero2.jpg";
-import hero3 from "../../assets/Images/hero3.jpg";
-import hero4 from "../../assets/Images/hero4.jpg";
+
+import hero1 from "../../assets/Images/bg.jpg";
+import hero2 from "../../assets/Images/hero1.jpg";
+import hero3 from "../../assets/Images/hero2.jpg";
+import hero4 from "../../assets/Images/hero3.jpg";
+import hero5 from "../../assets/Images/hero4.jpg";
 
 const slides = [
-  { image: bg, title: "Explore Global Opportunities", description: "Find world-class universities and programs designed for your future." },
-  { image: hero1, title: "Study Abroad With Confidence", description: "Access verified information and resources for students worldwide." },
-  { image: hero2, title: "Connect With Top Institutions", description: "Your gateway to quality education across continents." },
-  { image: hero3, title: "Discover Scholarships", description: "Apply to the best scholarships that match your dream program." },
-  { image: hero4, title: "Shape Your Future Today", description: "Join our global community of learners and educators." },
+  {
+    image: hero1,
+    title: "Explore Global Opportunities",
+    description: "Discover top international universities and programs carefully curated to help you advance academically and professionally on a global scale."
+  },
+  {
+    image: hero2,
+    title: "Study Abroad With Confidence",
+    description: "Access reliable guidance, verified resources, and practical tips to ensure a smooth and successful journey toward studying abroad."
+  },
+  {
+    image: hero3,
+    title: "Connect With Top Institutions",
+    description: "Engage with leading universities and colleges worldwide to find the programs and opportunities that align perfectly with your educational goals."
+  },
+  {
+    image: hero4,
+    title: "Discover Scholarships",
+    description: "Explore a wide range of scholarships, grants, and funding options that make pursuing your dream program more affordable and achievable."
+  },
+  {
+    image: hero5,
+    title: "Shape Your Future Today",
+    description: "Join a thriving global community of learners and educators, taking meaningful steps toward realizing your academic and professional aspirations."
+  },
 ];
+
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [transition, setTransition] = useState(true);
+  const totalSlides = slides.length;
   const containerRef = useRef(null);
 
-  const totalSlides = slides.length;
+  
+  const extendedSlides = [...slides, slides[0]];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => prev + 1);
       setTransition(true);
     }, 5000);
+
     return () => clearInterval(interval);
   }, []);
 
-  // Handle infinite loop
+  // Handle loop reset
   const handleTransitionEnd = () => {
-    if (current === totalSlides) {
-      
-      setTransition(false);
-      setCurrent(0);
+    if (current >= totalSlides) {
+      setTransition(false); 
+      setCurrent(0); 
     }
   };
-
-  
-  const extendedSlides = [...slides, slides[0]]; 
 
   return (
     <div className="relative w-full h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
@@ -53,7 +74,7 @@ export default function Hero() {
         {extendedSlides.map((slide, index) => (
           <div
             key={index}
-            className="w-full shrink-0 relative bg-center bg-cover"
+            className="relative min-w-full bg-center bg-cover"
             style={{ backgroundImage: `url(${slide.image})` }}
           >
             <div className="absolute inset-0 bg-black/50"></div>
@@ -62,16 +83,15 @@ export default function Hero() {
       </div>
 
       {/* Text content */}
-      <div className="relative z-10 max-w-2xl mx-auto px-6 animate-fadeIn">
-        
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-blue-100 drop-shadow-lg">
+      <div className="relative z-10 max-w-2xl mx-auto md:px-6 px-2 animate-fadeIn">
+        <h1 className="text-3xl md:text-5xl font-bold mt-5 mb-8 text-blue-100 drop-shadow-lg title-font">
           {slides[current % totalSlides].title}
         </h1>
         <p className="text-lg md:text-xl mb-6 text-gray-200 drop-shadow-md">
           {slides[current % totalSlides].description}
         </p>
-        <button className="px-8 py-3 bg-linear-to-r from-blue-500 to-indigo-600 rounded-full text-white font-semibold hover:from-indigo-500 hover:to-blue-600 transition-all duration-300 shadow-lg">
-          Sign Up
+        <button className="border bg-[#151269] hover:bg-white hover:text-blue-800 px-5 py-2 rounded-lg mt-10 cursor-pointer hover:font-semibold">
+           Explore More
         </button>
       </div>
 
