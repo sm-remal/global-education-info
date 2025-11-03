@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { TbEyeClosed } from "react-icons/tb";
 import { FaRegFaceRollingEyes } from "react-icons/fa6";
@@ -8,24 +8,50 @@ import { AuthContext } from "../../Context/AuthContext";
 import logo from "../../assets/Images/website-logo.png"
 
 const LogIn = () => {
-  const { logInGoogle } = useContext(AuthContext);
+  const { logInGoogle, setLoading, userLogIn } = useContext(AuthContext);
   const [showEye, setShowEye] = useState(true);
+   const [email, setEmail] = useState("");
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
  const handleGoogleLogIn = () => {
    logInGoogle()
      .then((result) => {
        const user = result.user;
        console.log(user);
+       navigate(location.state || "/")
        
        
      })
      .catch((err) => console.log(err.message));
- };
+  };
+  
+
+   const handleLogIn = (e) => {
+     e.preventDefault();
+     const email = e.target.email.value;
+     const password = e.target.password.value;
+
+     userLogIn(email, password)
+       .then(() => {
+         alert("Your LogIn Successful.");
+         navigate(location.state || "/");
+       })
+       .catch((err) => {
+         setLoading(false);
+         alert(`${err.message}`);
+         return;
+       });
+   };
 
   return (
-      <Container className={`flex justify-center items-center py-15`}>
-          <title>LogIn || Global-Education-info</title>
-      <form className="bg-base-200 shadow-lg rounded-box md:w-3/6 lg:w-2/6 border p-7 border-teal-500">
+    <Container className={`flex justify-center items-center py-15`}>
+      <title>LogIn || Global-Education-info</title>
+      <form
+        onSubmit={handleLogIn}
+        className="bg-base-200 shadow-lg rounded-box md:w-3/6 lg:w-2/6 border p-7 border-teal-500"
+      >
         <div className="flex items-center justify-center">
           <img className="w-40 py-5" src={logo} alt="This is logo" />
         </div>
@@ -40,6 +66,7 @@ const LogIn = () => {
             </span>
           </Link>
         </p>
+
         <fieldset className="fieldset space-y-2">
           <label className="text-base font-medium">
             {" "}
@@ -50,6 +77,9 @@ const LogIn = () => {
               </span>
               <input
                 type="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="globaleducationinfo@gmail.com"
                 className="input w-full focus:border-teal-500 border border-[#632EE3] focus:outline-0 cursor-pointer"
               />
@@ -79,13 +109,24 @@ const LogIn = () => {
               </div>
             </label>
           </label>
-          <p>
+
+          {/* <Link to={"/forgotpassword"}>
+            state={{ email: email }}
             <span className="hover:underline text-[#632EE3]">
               <span className="from-[#632EE3] to-[#9F62F2] cursor-pointer text-transparent bg-linear-to-r bg-clip-text font-semibold">
                 Forgot Password?
               </span>
             </span>
-          </p>
+          </Link> */}
+          <div>
+            <Link
+              to={"/forgotpassword"}
+              state={{ email: email }}
+              className="link link-hover text-[#632EE3] text-sm"
+            >
+              Forgot password?
+            </Link>
+          </div>
 
           <button className="myBtn bg-linear-to-r text-white hover:bg-linear-to-l from-[#632EE3] to-[#9F62F2]">
             Login
@@ -97,7 +138,6 @@ const LogIn = () => {
           </p>
           {/* Google Btn */}
           <Link
-            to={"/"}
             onClick={handleGoogleLogIn}
             className="inline-block bg-linear-to-r from-[#632EE3] to-[#9F62F2] p-0.5 rounded-md transition-all duration-700 ease-in-out"
           >

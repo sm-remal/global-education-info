@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
   updateProfile,
@@ -12,7 +13,6 @@ import { AuthContext } from "../Context/AuthContext";
 import { auth } from "../Firebase/Firebase.config";
 
 const AuthProvider = ({ children }) => {
-
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -26,6 +26,13 @@ const AuthProvider = ({ children }) => {
   const logInGoogle = () => {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider);
+  };
+
+  // * Email & Password logIn user
+
+  const userLogIn = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   // * User onAuth Sate
@@ -60,11 +67,12 @@ const AuthProvider = ({ children }) => {
     loading,
     userSignOut,
     updateUserInfo,
+    userLogIn,
   };
 
   return (
     <>
-      <AuthContext.Provider  value={userInfo}>{children}</AuthContext.Provider>
+      <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>
     </>
   );
 };
