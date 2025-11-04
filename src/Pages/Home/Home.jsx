@@ -12,11 +12,9 @@ import PopularProgram from "../../Components/PopularProgram/PopularProgram";
 const Home = () => {
   return (
     <div className="">
+      <Container>
       <Hero></Hero>
       <TopUniversities></TopUniversities>
-      
-       <Hero></Hero>
-      <Container>
        <PopularProgram></PopularProgram>
       </Container>
     </div>

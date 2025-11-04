@@ -34,7 +34,7 @@ const programs = [
 
 const PopularProgram = () => {
   return (
-    <div className="py-16 bg-[#151269] my-10 rounded-2xl">
+    <div className="py-16 bg-[#151269] mb-10 rounded-2xl">
 
     <div className="text-center mb-12 px-6">
         <h2 className="title-font text-4xl md:text-5xl text-white mb-4">
@@ -44,10 +44,6 @@ const PopularProgram = () => {
          Explore a variety of academic paths designed for your growth — including Undergraduate, Postgraduate, PhD, and Diploma programs — each crafted to help you excel globally.
         </p>
       </div>
-
-
-
-
 
       <div className=" px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
