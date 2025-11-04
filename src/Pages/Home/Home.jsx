@@ -6,6 +6,7 @@ import Hero from "../../Components/Hero/Hero";
 import TopUniversities from "../../Components/TopUniversities/TopUniversities";
 
 import PopularProgram from "../../Components/PopularProgram/PopularProgram";
+import HowItWork from "../../Components/HomeComponants/HowItWork";
 
 
 
@@ -17,6 +18,7 @@ const Home = () => {
       <TopUniversities></TopUniversities>
        <PopularProgram></PopularProgram>
       </Container>
+      <HowItWork></HowItWork>
     </div>
   );
 };
