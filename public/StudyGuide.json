@@ -1,0 +1,158 @@
+[
+  {
+    "country": "United Kingdom",
+    "visa_type": "Student Route Visa",
+    "tuition_fees_per_year": "10000-20000 GBP",
+    "living_cost_per_month": "1000-1200 GBP",
+    "part_time_work": "20 hrs/week",
+    "requirements": [
+      "Valid passport",
+      "CAS letter",
+      "Financial proof",
+      "English proficiency (IELTS)"
+    ],
+    "benefits": [
+      "Shorter degree duration",
+      "Work rights",
+      "Post-study work visa",
+      "Healthcare coverage (NHS)"
+    ]
+  },
+  {
+    "country": "Australia",
+    "visa_type": "Subclass 500",
+    "tuition_fees_per_year": "15000-30000 AUD",
+    "living_cost_per_month": "1500-2000 AUD",
+    "part_time_work": "48 hrs/fortnight",
+    "requirements": [
+      "Valid passport",
+      "COE letter",
+      "Financial proof",
+      "English proficiency (IELTS)",
+      "Academic transcripts"
+    ],
+    "benefits": [
+      "High quality education",
+      "Work rights",
+      "Post-study work visa",
+      "Healthcare coverage (Medicare)"
+    ]
+  },
+  {
+    "country": "Canada",
+    "visa_type": "Study Permit",
+    "tuition_fees_per_year": "15000-25000 CAD",
+    "living_cost_per_month": "1000-1500 CAD",
+    "part_time_work": "20 hrs/week",
+    "requirements": [
+      "Valid passport",
+      "Letter of Acceptance (LOA)",
+      "Financial proof",
+      "English proficiency (IELTS/TOEFL)"
+    ],
+    "benefits": [
+      "PR pathways",
+      "Work rights",
+      "Post-study work visa",
+      "Safe multicultural society"
+    ]
+  },
+  {
+    "country": "United States",
+    "visa_type": "F-1 Visa",
+    "tuition_fees_per_year": "20000-40000 USD",
+    "living_cost_per_month": "1200-2000 USD",
+    "part_time_work": "20 hrs/week",
+    "requirements": [
+      "Valid passport",
+      "I-20 form",
+      "SEVIS fee",
+      "Financial proof",
+      "English proficiency (IELTS/TOEFL)",
+      "Academic records"
+    ],
+    "benefits": [
+      "Top universities",
+      "OPT work visa",
+      "Research opportunities",
+      "Global exposure"
+    ]
+  },
+  {
+    "country": "Germany",
+    "visa_type": "Student Visa",
+    "tuition_fees_per_year": "0-10000 EUR",
+    "living_cost_per_month": "800-1200 EUR",
+    "part_time_work": "20 hrs/week",
+    "requirements": [
+      "Valid passport",
+      "University admission",
+      "Blocked account",
+      "English/German proficiency (IELTS/TestDaF)"
+    ],
+    "benefits": [
+      "Low tuition",
+      "Free healthcare",
+      "PR options",
+      "Strong engineering programs"
+    ]
+  },
+  {
+    "country": "Netherlands",
+    "visa_type": "MVV + Residence Permit",
+    "tuition_fees_per_year": "6000-15000 EUR",
+    "living_cost_per_month": "900-1300 EUR",
+    "part_time_work": "16 hrs/week",
+    "requirements": [
+      "Valid passport",
+      "University offer",
+      "Financial proof",
+      "English proficiency (IELTS/TOEFL)"
+    ],
+    "benefits": [
+      "English-taught programs",
+      "Work rights",
+      "PR options",
+      "High quality of life"
+    ]
+  },
+  {
+    "country": "France",
+    "visa_type": "Long-stay Visa",
+    "tuition_fees_per_year": "2000-10000 EUR",
+    "living_cost_per_month": "800-1200 EUR",
+    "part_time_work": "20 hrs/week",
+    "requirements": [
+      "Valid passport",
+      "University acceptance",
+      "Financial proof",
+      "French/English proficiency"
+    ],
+    "benefits": [
+      "Affordable tuition",
+      "Cultural richness",
+      "Work rights",
+      "EU mobility"
+    ]
+  },
+  {
+    "country": "Japan",
+    "visa_type": "Student Visa",
+    "tuition_fees_per_year": "500000-1200000 JPY",
+    "living_cost_per_month": "80000-120000 JPY",
+    "part_time_work": "28 hrs/week",
+    "requirements": [
+      "Valid passport",
+      "Certificate of Eligibility (COE)",
+      "Financial proof",
+      "Japanese/English proficiency",
+      "Academic records"
+    ],
+    "benefits": [
+      "Tech-focused programs",
+      "Safe society",
+      "Scholarships",
+      "Cultural immersion"
+    ]
+  }
+]

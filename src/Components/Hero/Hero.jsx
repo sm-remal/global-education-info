@@ -67,7 +67,9 @@ export default function Hero() {
       {/* Slides container */}
       <div
         ref={containerRef}
-        className={`absolute inset-0 flex ${transition ? "transition-transform duration-1000 ease-in-out" : ""}`}
+        className={`absolute inset-0 flex ${
+          transition ? "transition-transform duration-1000 ease-in-out" : ""
+        }`}
         style={{ transform: `translateX(-${current * 100}%)` }}
         onTransitionEnd={handleTransitionEnd}
       >
@@ -91,7 +93,7 @@ export default function Hero() {
           {slides[current % totalSlides].description}
         </p>
         <button className="border bg-[#151269] hover:bg-white hover:text-blue-800 px-5 py-2 rounded-lg mt-10 cursor-pointer hover:font-semibold">
-           Explore More
+          Explore More
         </button>
       </div>
 
@@ -105,7 +107,9 @@ export default function Hero() {
               setTransition(true);
             }}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              i === current % totalSlides ? "bg-blue-400 w-5" : "bg-gray-400 hover:bg-gray-300"
+              i === current % totalSlides
+                ? "bg-[#151269] w-5"
+                : "bg-gray-400 hover:bg-gray-300"
             }`}
           ></button>
         ))}
