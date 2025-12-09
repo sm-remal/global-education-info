@@ -1,15 +1,26 @@
 import React, { use, useEffect, useRef, useState } from "react";
 import Container from "../../Container/Container";
 import DestinationGuideCard from "./DestinationGuideCard";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
-const studyGuidePromise = fetch("/StudyGuide.json").then((res) => res.json());
+// const studyGuidePromise = fetch("/StudyGuide.json").then((res) => res.json());
 
 const StudyDestinationGuide = () => {
   const modalRef = useRef();
-  const studyGuide = use(studyGuidePromise);
+
+  const {data: studyGuide = []} = useQuery({
+    queryKey: ["countries"],
+    queryFn: async () => {
+      const res = await axios.get("http://localhost:5000/countries");
+      return res.data;
+    }
+  })
+
+
+  // const studyGuide = use(studyGuidePromise);
   const studyGuideSlice = studyGuide.slice(0, 3);
   //  console.log(studyGuide.slice(0, 3));
-    console.log(studyGuide);
     const studyGuideContents = studyGuide;
 
   const options = [
